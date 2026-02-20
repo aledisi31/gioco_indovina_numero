@@ -7,6 +7,7 @@ tentativo = 0
 
 #Stampa un messaggio di benvenuto e chiedi all'utente di indovinare il numero segreto
 print("Benvenuto al gioco del numero segreto!")
+contatore = 0
 
 #Ciclo finché l'utente non indovina il numero segreto
 while tentativo != numero_segreto:
@@ -17,6 +18,9 @@ while tentativo != numero_segreto:
         #Se l'input non è un numero valido, stampa un messaggio di errore e continua il ciclo
         print("Inserisci un numero valido, non una lettera!")
         continue #ricomincia il ciclo dal via senza eseguire il resto del codice
+    
+
+    contatore += 1
 
     if tentativo < numero_segreto:
         print("Troppo basso! Riprova.")
@@ -24,3 +28,4 @@ while tentativo != numero_segreto:
         print("Troppo alto! Riprova.")
     else:
         print("Congratulazioni! Hai indovinato il numero segreto!")
+        print("Hai indovinato in", contatore, "tentativi.")
