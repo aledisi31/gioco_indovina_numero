@@ -11,7 +11,12 @@ print("Benvenuto al gioco del numero segreto!")
 #Ciclo finché l'utente non indovina il numero segreto
 while tentativo != numero_segreto:
     risposta = input("Indovina il numero segreto (tra 1 e 100): ")
-    tentativo = int(risposta)
+    try:
+        tentativo = int(risposta)
+    except ValueError:
+        #Se l'input non è un numero valido, stampa un messaggio di errore e continua il ciclo
+        print("Inserisci un numero valido, non una lettera!")
+        continue #ricomincia il ciclo dal via senza eseguire il resto del codice
 
     if tentativo < numero_segreto:
         print("Troppo basso! Riprova.")
